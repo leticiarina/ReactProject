@@ -39,7 +39,7 @@ function Contato() {
 				    <FormControl componentClass="textarea"/>
 		    	</Col>
 		    </FormGroup>
-		    <Button type="submit" bsClass="submit">Enviar</Button>
+		    <Button type="submit" bsClass="purple-btn">Enviar</Button>
 		  </Form>    
 		</div>
 	  </div>

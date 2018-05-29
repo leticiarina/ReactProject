@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { NavLink } from 'react-router-dom';
 import { ButtonToolbar, DropdownButton, MenuItem } from 'react-bootstrap';
 
 class Login extends React.Component{
@@ -28,15 +29,15 @@ class Login extends React.Component{
 	render(){
 		if(this.state.submitted){
 			return(
-				<div class="dropdown">
-				  <button class="btn btn-sm purple-btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<div className="dropdown purple-btn">
+				  <button className="btn btn-sm purple-btn dropdown-toggle" type="button" data-toggle="dropdown">
 					{localStorage.getItem("email")}
 				  </button>
-				  <div class="dropdown-menu purple-btn dropdown-menu-right" aria-labelledby="dropdownMenu2">
-				    <button class="dropdown-item btn-sm purple-btn" type="button">Painel</button>
-				    <button class="dropdown-item btn-sm purple-btn" type="button">Agendar Serviço</button>
-				    <div class="dropdown-divider"></div>
-				    <button class="dropdown-item btn-sm purple-btn" type="button">Sair</button>
+				  <div className="dropdown-menu purple-btn dropdown-menu-right">
+			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>
+			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Agendar Serviços</NavLink>
+				    <div className="dropdown-divider"></div>
+			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Sair</NavLink>
 				  </div>
 				</div>			
 			);
