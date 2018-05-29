@@ -14,18 +14,24 @@ function Contato() {
 				<Col>
 				    <FormControl/>
 				</Col>
+			</FormGroup>
+			<FormGroup>
 				<Col>
 					<ControlLabel>E-mail</ControlLabel>
 				</Col>
 				<Col>
 				    <FormControl type="email"/>
 		    	</Col>
+			</FormGroup>
+			<FormGroup>
 				<Col>
 					<ControlLabel>Assunto</ControlLabel>
 				</Col>
 				<Col>
 				    <FormControl/>
 		    	</Col>
+			</FormGroup>
+			<FormGroup>
 				<Col>
 					<ControlLabel>Mensagem</ControlLabel>
 				</Col>
