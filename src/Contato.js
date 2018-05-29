@@ -1,21 +1,43 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Menu from './Menu';
-import Services from './Services';
-import Footer from './Footer';
-import './css/bootstrap.min.css';
-import './css/style.css';
+import { Form, FormGroup, FormControl, Col, ControlLabel, Button } from 'react-bootstrap';
 
 function Contato() {
   return (
-    <div>
-      <Menu/>
-      <Footer/>
-    </div>
+	<div class="row m-0 align-items-center bg-light-green border border-white">
+		<div class="col p-2 p-md-5">
+	    <h1>Contato</h1>
+		  <Form horizontal>
+			<FormGroup>
+				<Col>
+					<ControlLabel>Nome</ControlLabel>
+				</Col>
+				<Col>
+				    <FormControl/>
+				</Col>
+				<Col>
+					<ControlLabel>E-mail</ControlLabel>
+				</Col>
+				<Col>
+				    <FormControl type="email"/>
+		    	</Col>
+				<Col>
+					<ControlLabel>Assunto</ControlLabel>
+				</Col>
+				<Col>
+				    <FormControl/>
+		    	</Col>
+				<Col>
+					<ControlLabel>Mensagem</ControlLabel>
+				</Col>
+				<Col>
+				    <FormControl componentClass="textarea"/>
+		    	</Col>
+		    </FormGroup>
+		    <Button type="submit" bsClass="submit">Enviar</Button>
+		  </Form>    
+		</div>
+	  </div>
   );
 }
 
-ReactDOM.render(
-  <Index />, 
-  document.getElementById("root")
-);    
+export default Contato;
