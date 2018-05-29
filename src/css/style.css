@@ -109,7 +109,7 @@ input[type=text], [type=password]{
 	border: 1px;
 } 
 
-.submit{
+.purple-btn{
 	background-color: #5e454b;
 	color: #f3f0d7;
 	font-family: 'Montserrat';

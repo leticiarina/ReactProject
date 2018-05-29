@@ -9,6 +9,7 @@ function Index() {
   return (
     <div>
       <Menu/>
+      <div id="content"></div>
       <Footer/>
     </div>
   );
