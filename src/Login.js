@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 class Login extends React.Component{
 
@@ -9,6 +9,7 @@ class Login extends React.Component{
 		this.handleChangeEmail = this.handleChangeEmail.bind(this);
 		this.handleChangeSenha = this.handleChangeSenha.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleLogout = this.handleLogout.bind(this);
 	}
 
 	handleChangeEmail(event){
@@ -24,6 +25,10 @@ class Login extends React.Component{
 		localStorage.setItem("email", this.state.email);
 	}
 
+	handleLogout(event){
+		localStorage.clear();
+	}
+
 	render(){
 		if(localStorage.getItem("email") != null){
 			return(
@@ -35,7 +40,9 @@ class Login extends React.Component{
 			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>
 			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Agendar Serviços</NavLink>
 				    <div className="dropdown-divider"></div>
-			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Sair</NavLink>
+				    <form onSubmit={this.handleLogout}>
+			    		<button className="dropdown-item btn-sm purple-btn" type="submit">Sair</button>
+				    </form>
 				  </div>
 				</div>			
 			);
