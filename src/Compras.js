@@ -29,18 +29,19 @@ class Compras extends React.Component{
 			);
 		} else {
 
-			var servico = JSON.parse(localStorage.getItem("servico"));
-
+			var compra = JSON.parse(localStorage.getItem("compra"));
 			return(	
 				<div>			
 					<h1>Compras</h1>
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">{servico.tipoServico}</h5>
-							<p>Data: {servico.data}</p>
-							<p>Horário: {servico.horario}</p>
+							<h5 class="card-title">Compra</h5>
+							<p>Comida de gato: {compra.comidaGato}x R$110</p>
+							<p>Brinquedo para gato: {compra.brinquedoGato}x R$5</p>
+							<p>Casa para gato: {compra.casaGato}x R$199,90</p>
+							<p>Comida para cachorro: {compra.comidaCachorro}x R$80</p>
 							<form onSubmit={this.handleSubmit}>
-								<button class="btn btn-sm purple-btn" type="submit">Excluir</button>
+								<button class="btn btn-sm purple-btn" type="submit">Cancelar compra</button>
 							</form>
 						</div>
 					</div>
@@ -55,22 +56,27 @@ class NovaCompra extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {comidaGato: '0', brinquedoGato: '0', casaGato: '0', comidaCachorro: '0'};
-		this.handleChangeTipoServico = this.handleChangeTipoServico.bind(this);
-		this.handleChangeData = this.handleChangeData.bind(this);
-		this.handleChangeHorario = this.handleChangeHorario.bind(this);
+		this.handleChangeComidaGato = this.handleChangeComidaGato.bind(this);
+		this.handleChangeBrinquedoGato = this.handleChangeBrinquedoGato.bind(this);
+		this.handleChangeCasaGato = this.handleChangeCasaGato.bind(this);
+		this.handleChangeComidaCachorro = this.handleChangeComidaCachorro.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleChangeTipoServico(event){
-		this.setState({tipoServico: event.target.value});
+	handleChangeComidaGato(event){
+		this.setState({comidaGato: event.target.value});
 	}
 
-	handleChangeData(event){
-		this.setState({data: event.target.value});
+	handleChangeBrinquedoGato(event){
+		this.setState({brinquedoGato: event.target.value});
 	}
 
-	handleChangeHorario(event){
-		this.setState({horario: event.target.value});
+	handleChangeCasaGato(event){
+		this.setState({casaGato: event.target.value});
+	}
+
+	handleChangeComidaCachorro(event){
+		this.setState({comidaCachorro: event.target.value});
 	}
 
 	handleSubmit(event){
@@ -83,52 +89,62 @@ class NovaCompra extends React.Component{
 			return(
 				<div class="p-2 md-5">
 					<h1>Nova Compra</h1>
-				      <div class="row masthead-followup row m-0 border border-white">
-				        <div class="col p-3 p-md-5 border border-white">
-				          <h3>Comida para gatos</h3>
-				          <img src={catfood}/>
-				          <p>Comida para gatos whiskas sabor carne 10Kg.</p>
-				          <hr class="half-rule"/>
-							<div class="form-group">
-								<label>Quantidade</label>
-					            <input class="form-control form-control-sm" type="number" min="0" value={this.state.comidaGato} onChange={this.handleChangeData}/>
-							</div>
-				        </div>
+						<form onSubmit={this.handleSubmit}>
+					      <div class="row masthead-followup row m-0 border border-white">
+					        <div class="col p-3 p-md-5 border border-white">
+						          <h3>Comida para gatos</h3>
+						          <img src={catfood}/>
+						          <p>Comida para gatos whiskas sabor carne 10Kg.</p>
+						          <p>R$110</p>
+						          <hr class="half-rule"/>
+									<div class="form-group">
+										<label>Quantidade</label>
+							            <input class="form-control form-control-sm" type="number" min="0" value={this.state.comidaGato} onChange={this.handleChangeComidaGato}/>
+									</div>
+						        </div>
 
-				        <div class="col p-3 p-md-5 bg-light-green  border border-white">
-				          <h3>Brinquedo para gatos</h3>
-				          <img src={cattoy}/>
-				          <p>Brinquedo para gatos com catnip.</p>
-				          <hr class="half-rule"/>
-							<div class="form-group">
-								<label>Quantidade</label>
-					            <input class="form-control form-control-sm" type="number" min="0" value={this.state.comidaGato} onChange={this.handleChangeData}/>
-							</div>
-				        </div>
+						        <div class="col p-3 p-md-5 bg-light-green  border border-white">
+						          <h3>Brinquedo para gatos</h3>
+						          <img src={cattoy}/>
+						          <p>Brinquedo para gatos com catnip.</p>
+						          <p>R$5</p>
+						          <hr class="half-rule"/>
+									<div class="form-group">
+										<label>Quantidade</label>
+							            <input class="form-control form-control-sm" type="number" min="0" value={this.state.brinquedoGato} onChange={this.handleChangeBrinquedoGato}/>
+									</div>
+						        </div>
 
-				        <div class="col p-3 p-md-5 bg-light-green border border-white">
-				          <h3>Casa para gatos</h3>
-				          <img src={cathouse}/>
-				          <p>Casa com 2 andares e arranhador para gatos.</p>
-				          <hr class="half-rule"/>
-							<div class="form-group">
-								<label>Quantidade</label>
-					            <input class="form-control form-control-sm" type="number" min="0" value={this.state.comidaGato} onChange={this.handleChangeData}/>
+						        <div class="col p-3 p-md-5 bg-light-green border border-white">
+						          <h3>Casa para gatos</h3>
+						          <img src={cathouse}/>
+						          <p>Casa com 2 andares e arranhador para gatos.</p>
+						          <p>R$199,90</p>
+						          <hr class="half-rule"/>
+									<div class="form-group">
+										<label>Quantidade</label>
+							            <input class="form-control form-control-sm" type="number" min="0" value={this.state.casaGato} onChange={this.handleChangeCasaGato}/>
+									</div>
+						        </div>
+						        
+						        <div class="col p-3 p-md-5 bg-light-green border border-white">
+							        <h3>Comida para cachorros</h3>
+							        <img src={dogfood}/>
+							        <p>Comida para cachorros Pedigree sabor frango com vegetais 10Kg.</p>
+						            <p>R$80</p>
+							        <hr class="half-rule"/>
+									<div class="form-group">
+										<label>Quantidade</label>
+						            	<input class="form-control form-control-sm" type="number" min="0" value={this.state.comidaCachorro} onChange={this.handleChangeComidaCachorro}/>
+									</div>
+						        </div>
+					      </div>
+				        <div class="row">
+							<div class="form-group col p-3">
+				            	<button class="btn btn-sm purple-btn" type="submit">Comprar</button>
 							</div>
-				        </div>
-				        
-				        <div class="col p-3 p-md-5 bg-light-green border border-white">
-					        <h3>Comida para cachorros</h3>
-					        <img src={dogfood}/>
-					        <p>Comida para cachorros Pedigree sabor frango com vegetais 10Kg.</p>
-					        <hr class="half-rule"/>
-							<div class="form-group">
-								<label>Quantidade</label>
-				            	<input class="form-control form-control-sm" type="number" min="0" value={this.state.comidaGato} onChange={this.handleChangeData}/>
-							</div>
-
-				        </div>
-				      </div>
+						</div>
+					</form>
 				</div>
 			);
 		} else {

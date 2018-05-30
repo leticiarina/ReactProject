@@ -36,7 +36,7 @@ class Agenda extends React.Component{
 							<p>Data: {servico.data}</p>
 							<p>Horário: {servico.horario}</p>
 							<form onSubmit={this.handleSubmit}>
-								<button class="btn btn-sm purple-btn" type="submit">Excluir</button>
+								<button class="btn btn-sm purple-btn" type="submit">Desmarcar</button>
 							</form>
 						</div>
 					</div>
