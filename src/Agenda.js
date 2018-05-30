@@ -16,6 +16,7 @@ class Agenda extends React.Component{
 		if(localStorage.getItem("servico") == null){
 			return(	
 				<div>
+					<h1>Agenda</h1>					
 					<p>Nenhum serviço agendado.</p>
 			    	<p>
 			    		<NavLink to="/painel/agenda/novo">Agendar serviço</NavLink>
@@ -27,14 +28,17 @@ class Agenda extends React.Component{
 			var servico = JSON.parse(localStorage.getItem("servico"));
 
 			return(	
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">{servico.tipoServico}</h5>
-						<p>Data: {servico.data}</p>
-						<p>Horário: {servico.horario}</p>
-						<form onSubmit={this.handleSubmit}>
-							<button type="submit">Excluir</button>
-						</form>
+				<div>			
+					<h1>Agenda</h1>
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">{servico.tipoServico}</h5>
+							<p>Data: {servico.data}</p>
+							<p>Horário: {servico.horario}</p>
+							<form onSubmit={this.handleSubmit}>
+								<button class="btn btn-sm purple-btn" type="submit">Excluir</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			);

@@ -129,14 +129,6 @@ input[type=text], [type=password]{
 	text-align: left;
 }
 
-.servicos, .produtos{
-	float: left;
-	margin: 10px 10px 10px 10px;
-	padding: 5px 5px 5px 5px;
-	border-style: solid;
-	border-color: #cee5d0;
-}
-
 .usuario{
 	width: 1000px;
 	height: 100px;

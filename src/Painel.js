@@ -1,6 +1,7 @@
 import React from 'react';
 import Atividades from './Atividades';
 import { Agenda, NovoServico }  from './Agenda';
+import { Compras, NovaCompra }  from './Compras';
 import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 
 function Painel(){
@@ -20,6 +21,8 @@ function Painel(){
 		  		<Route path="/painel/atividades" component={Atividades}/>
 		  		<Route exact path="/painel/agenda" component={Agenda}/>
 		  		<Route path="/painel/agenda/novo" component={NovoServico}/>
+		  		<Route exact path="/painel/compras" component={Compras}/>
+		  		<Route path="/painel/compras/novo" component={NovaCompra}/>
 			</Switch>
 			</div>
 		</div>
@@ -32,7 +35,7 @@ const LateralMenu = () => (
   <div class="sidebar-menu col-2 p-2 md-5">
     <div class="nav flex-column" role="tablist" aria-orientation="vertical">
       <NavLink to="/painel/atividades">Atividades</NavLink>
-      <NavLink to="">Compras</NavLink>
+      <NavLink to="/painel/compras">Compras</NavLink>
       <NavLink to="/painel/agenda">Agenda</NavLink>
       <NavLink to="">Perfil</NavLink>
     </div>
