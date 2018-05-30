@@ -38,18 +38,18 @@ h3{
 	font-family: 'Montserrat';
 }
 
-a:hover, .info-user a:hover, .usuario hover {
+a:hover, .info-user a:hover, .sidebar-menu a:hover {
 	color: #d8b384;
+	text-decoration: none;
 }
 
 .usuario:hover {
 	background-color: #3fab9b
 }
-.info-user, .info-user a{
+.info-user, .info-user a, .sidebar-menu a{
 	float: right;
 	padding-right: 15px; 
 	color: #f3f0d7;
-	font-size: 13px;
 	text-decoration: none;
 }
 
@@ -115,10 +115,8 @@ input[type=text], [type=password]{
 	font-family: 'Montserrat';
 }
 
-
-#cadastrado {
-	text-align : center;
-
+.sidebar-menu{
+	background-color: #5e454b
 }
 
 .intro{

@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom';
-import { ButtonToolbar, DropdownButton, MenuItem } from 'react-bootstrap';
 
 class Login extends React.Component{
 
@@ -27,7 +25,7 @@ class Login extends React.Component{
 	}
 
 	render(){
-		if(this.state.submitted){
+		if(localStorage.getItem("email") != null){
 			return(
 				<div className="dropdown purple-btn">
 				  <button className="btn btn-sm purple-btn dropdown-toggle" type="button" data-toggle="dropdown">

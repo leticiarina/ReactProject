@@ -5,7 +5,7 @@ import Services from './Services';
 import Contato from './Contato';
 import Painel from './Painel';
 import Footer from './Footer';
-import { NavLink, Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './css/bootstrap.min.css';
 import './css/style.css';
 
@@ -16,7 +16,7 @@ function Index() {
       <Switch>
   		<Route exact path="/" component={Services}/>
   		<Route path="/contato" component={Contato}/>      	
-  		<Route path="/painel" component={Painel}/>      	
+  		<Route path="/painel" component={Painel}/>
       </Switch>
       <Footer/>
     </div>
