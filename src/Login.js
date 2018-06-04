@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Login extends React.Component{
 
@@ -24,9 +24,7 @@ class Login extends React.Component{
 	handleSubmit(event){
 		if(this.user.email === this.state.email && this.user.senha === this.state.senha){
 			this.setState({logged: true});
-			localStorage.setItem("user", JSON.stringify(this.state))
-		}
-		 else 
+		} else 
 			window.alert("Login inválido.");
 	}
 
@@ -54,15 +52,15 @@ class Login extends React.Component{
 			);
 		} else {
 			return(
-		        <form class="form-inline" onSubmit={this.handleSubmit}>
-		          <div class="form-group mx-sm-2">
-		            <input class="form-control form-control-sm" value={this.state.email} onChange={this.handleChangeEmail} placeholder="Login"/>
+		        <form className="form-inline" onSubmit={this.handleSubmit}>
+		          <div className="form-group mx-sm-2">
+		            <input className="form-control form-control-sm" value={this.state.email} onChange={this.handleChangeEmail} placeholder="Login"/>
 		          </div>
-		          <div class="form-group mx-sm-2">
-		            <input class="form-control form-control-sm" value={this.state.senha} onChange={this.handleChangeSenha} type="password" placeholder="Senha"/>
+		          <div className="form-group mx-sm-2">
+		            <input className="form-control form-control-sm" value={this.state.senha} onChange={this.handleChangeSenha} type="password" placeholder="Senha"/>
 		          </div>
-		          <div class="form-group mx-sm-2">
-		            <button class="btn btn-sm purple-btn" type="submit">Entrar</button>
+		          <div className="form-group mx-sm-2">
+		            <button className="btn btn-sm purple-btn" type="submit">Entrar</button>
 		          </div>
 		        </form>		
 			);

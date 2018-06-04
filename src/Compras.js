@@ -3,7 +3,7 @@ import catfood from './img/catfood.jpg';
 import cattoy from './img/cattoy_mice.jpg';
 import cathouse from './img/cathouse.jpg';
 import dogfood from './img/dogfood.jpg';
-import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 
 class Compras extends React.Component{
 
@@ -93,7 +93,7 @@ class NovaCompra extends React.Component{
 					      <div class="row masthead-followup row m-0 border border-white">
 					        <div class="col p-3 p-md-5 border border-white">
 						          <h3>Comida para gatos</h3>
-						          <img src={catfood}/>
+						          <img src={catfood} alt="Comida para gato"/>
 						          <p>Comida para gatos whiskas sabor carne 10Kg.</p>
 						          <p>R$110</p>
 						          <hr class="half-rule"/>
@@ -105,7 +105,7 @@ class NovaCompra extends React.Component{
 
 						        <div class="col p-3 p-md-5 bg-light-green  border border-white">
 						          <h3>Brinquedo para gatos</h3>
-						          <img src={cattoy}/>
+						          <img src={cattoy} alt="Brinquedo para gatos"/>
 						          <p>Brinquedo para gatos com catnip.</p>
 						          <p>R$5</p>
 						          <hr class="half-rule"/>
@@ -117,7 +117,7 @@ class NovaCompra extends React.Component{
 
 						        <div class="col p-3 p-md-5 bg-light-green border border-white">
 						          <h3>Casa para gatos</h3>
-						          <img src={cathouse}/>
+						          <img src={cathouse} alt="Casa para gatos"/>
 						          <p>Casa com 2 andares e arranhador para gatos.</p>
 						          <p>R$199,90</p>
 						          <hr class="half-rule"/>
@@ -129,7 +129,7 @@ class NovaCompra extends React.Component{
 						        
 						        <div class="col p-3 p-md-5 bg-light-green border border-white">
 							        <h3>Comida para cachorros</h3>
-							        <img src={dogfood}/>
+							        <img src={dogfood} alt="Comida para cachorro"/>
 							        <p>Comida para cachorros Pedigree sabor frango com vegetais 10Kg.</p>
 						            <p>R$80</p>
 							        <hr class="half-rule"/>

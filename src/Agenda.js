@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 
 class Agenda extends React.Component{
 

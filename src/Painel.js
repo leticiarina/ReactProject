@@ -2,11 +2,11 @@ import React from 'react';
 import Atividades from './Atividades';
 import { Agenda, NovoServico }  from './Agenda';
 import { Compras, NovaCompra }  from './Compras';
-import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { Switch, Route, NavLink } from 'react-router-dom';
 
 function Painel(){
 
-	if(localStorage.getItem("email") == null){
+	if(localStorage.getItem("user") == null){
 		return(
 			<div>
 			Usuário não logado
@@ -14,9 +14,9 @@ function Painel(){
 		);
 	}else{
 		return(	
-		<div class="row m-0 border border-white">
+		<div className="row m-0 border border-white">
 			<LateralMenu/>
-			<div class="col p-2 md-5 bg-light-green border border-white">
+			<div className="col p-2 md-5 bg-light-green border border-white">
 			<Switch>
 		  		<Route path="/painel/atividades" component={Atividades}/>
 		  		<Route exact path="/painel/agenda" component={Agenda}/>
@@ -32,8 +32,8 @@ function Painel(){
 }
 
 const LateralMenu = () => (
-  <div class="sidebar-menu col-2 p-2 md-5">
-    <div class="nav flex-column" role="tablist" aria-orientation="vertical">
+  <div className="sidebar-menu col-2 p-2 md-5">
+    <div className="nav flex-column" role="tablist" aria-orientation="vertical">
       <NavLink to="/painel/atividades">Atividades</NavLink>
       <NavLink to="/painel/compras">Compras</NavLink>
       <NavLink to="/painel/agenda">Agenda</NavLink>

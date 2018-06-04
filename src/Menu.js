@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom';
 function Menu(){
 	return(
 		<div>
-			<nav class="navbar navbar-expand-lg menu">
+			<nav className="navbar navbar-expand-lg menu">
 		        PET SHOP
-		        <ul class="navbar-nav mr-auto">
-		          <li class="nav-item">
+		        <ul className="navbar-nav mr-auto">
+		          <li className="nav-item">
 		            <NavLink to="/" className="nav-link link-menu">Início</NavLink>
 		          </li>
-		          <li class="nav-item">
+		          <li className="nav-item">
 		            <NavLink to="/contato" className="nav-link link-menu">Contato</NavLink>
 		          </li>
 		        </ul>
