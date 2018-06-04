@@ -5,7 +5,8 @@ class Login extends React.Component{
 
 	constructor(props){
 		super(props);
-		this.state = {email: '', senha: '', submitted: false};
+		this.user = JSON.parse(localStorage.getItem("user"));
+		this.state = {email: '', senha: '', logged: false};
 		this.handleChangeEmail = this.handleChangeEmail.bind(this);
 		this.handleChangeSenha = this.handleChangeSenha.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,20 +22,25 @@ class Login extends React.Component{
 	}
 
 	handleSubmit(event){
-		this.setState({submitted: true});
-		localStorage.setItem("email", this.state.email);
+		if(this.user.email === this.state.email && this.user.senha === this.state.senha){
+			this.setState({logged: true});
+			localStorage.setItem("user", JSON.stringify(this.state))
+		}
+		 else 
+			window.alert("Login inválido.");
 	}
 
 	handleLogout(event){
+		this.setState({logged: false});
 		localStorage.clear();
 	}
 
 	render(){
-		if(localStorage.getItem("email") != null){
+		if(this.state.logged){
 			return(
 				<div className="dropdown purple-btn">
 				  <button className="btn btn-sm purple-btn dropdown-toggle" type="button" data-toggle="dropdown">
-					{localStorage.getItem("email")}
+					{this.user.email}
 				  </button>
 				  <div className="dropdown-menu purple-btn dropdown-menu-right">
 			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>
