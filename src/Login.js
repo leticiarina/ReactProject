@@ -6,7 +6,8 @@ class Login extends React.Component{
 	constructor(props){
 		super(props);
 		this.user = JSON.parse(localStorage.getItem("user"));
-		this.state = {email: '', senha: '', logged: false};
+		this.admin = JSON.parse(localStorage.getItem("admin"));
+		this.state = {email: '', senha: '', loggedUser: false, loggedAdmin: false};
 		this.handleChangeEmail = this.handleChangeEmail.bind(this);
 		this.handleChangeSenha = this.handleChangeSenha.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,23 +23,58 @@ class Login extends React.Component{
 	}
 
 	handleSubmit(event){
-		if(this.user.email === this.state.email && this.user.senha === this.state.senha){
-			this.setState({logged: true});
+		if(this.user.email === this.state.email && this.user.senha === this.state.senha
+			&& this.admin.email !== this.state.email && this.admin.senha !== this.state.senha){
+			this.user.logged = true;
+			localStorage.setItem("user", JSON.stringify(this.user));
+			this.setState({loggedUser: true});
+			this.setState({loggedAdmin: false});
+		} else if(this.admin.email === this.state.email && this.admin.senha === this.state.senha){
+			this.admin.logged = true;
+			localStorage.setItem("admin", JSON.stringify(this.admin));
+			this.setState({loggedAdmin: true});
+			this.setState({loggedUser: false});
 		} else 
 			window.alert("Login inválido.");
 	}
 
 	handleLogout(event){
-		this.setState({logged: false});
-		localStorage.clear();
+		// Sign out user
+		if(this.user.logged){
+			this.user.logged = false;
+			localStorage.setItem("user", JSON.stringify(this.user));
+			this.setState({loggedUser: false});
+		
+		// Sign out admin
+		} else {
+			this.admin.logged = false;
+			localStorage.setItem("admin", JSON.stringify(this.admin));
+			this.setState({loggedAdmin: false});
+		}
 	}
 
 	render(){
-		if(this.state.logged){
+		if(this.state.loggedUser){
 			return(
 				<div className="dropdown purple-btn">
 				  <button className="btn btn-sm purple-btn dropdown-toggle" type="button" data-toggle="dropdown">
-					{this.user.email}
+					{this.user.name}
+				  </button>
+				  <div className="dropdown-menu purple-btn dropdown-menu-right">
+			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>
+			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel/agenda">Agendar Serviços</NavLink>
+				    <div className="dropdown-divider"></div>
+				    <form onSubmit={this.handleLogout}>
+			    		<button className="dropdown-item btn-sm purple-btn" type="submit">Sair</button>
+				    </form>
+				  </div>
+				</div>			
+			);
+		} else if(this.admin.logged){
+			return(
+				<div className="dropdown purple-btn">
+				  <button className="btn btn-sm purple-btn dropdown-toggle" type="button" data-toggle="dropdown">
+					{this.admin.name}
 				  </button>
 				  <div className="dropdown-menu purple-btn dropdown-menu-right">
 			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>

@@ -35,6 +35,7 @@ class Agenda extends React.Component{
 
 			return (
 				<div>
+					<h1>Agenda</h1>
 					{allServices}
 	    			<NavLink to="/painel/agenda/novo">Agendar serviço</NavLink>
 	    		</div>

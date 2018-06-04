@@ -13,8 +13,8 @@ class Index extends React.Component{
 
 	constructor(props){
 		super(props);
-		localStorage.setItem("user", JSON.stringify({email: 'user@petshop.com', senha: 'senha', logged: false}));
-		localStorage.setItem("admin", JSON.stringify({email: 'admin@petshop.com', senha: 'admin', logged: false}));
+		localStorage.setItem("user", JSON.stringify({email: 'user@petshop.com', senha: 'senha', name: "Usuário", logged: false}));
+		localStorage.setItem("admin", JSON.stringify({email: 'admin@petshop.com', senha: 'admin', name: "Admin", logged: false}));
 	}
 
 	render(){
