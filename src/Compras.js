@@ -17,7 +17,7 @@ class Compras extends React.Component{
 	}
 
 	render(){
-		if(localStorage.getItem("compra") == null){
+		if(localStorage.getItem("purchases") == null){
 			return(	
 				<div>
 					<h1>Compras</h1>
@@ -29,26 +29,26 @@ class Compras extends React.Component{
 			);
 		} else {
 
-			var compra = JSON.parse(localStorage.getItem("compra"));
-			return(	
-				<div>			
-					<h1>Compras</h1>
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Compra</h5>
-							<p>Comida de gato: {compra.comidaGato}x R$110</p>
-							<p>Brinquedo para gato: {compra.brinquedoGato}x R$5</p>
-							<p>Casa para gato: {compra.casaGato}x R$199,90</p>
-							<p>Comida para cachorro: {compra.comidaCachorro}x R$80</p>
-							<form onSubmit={this.handleSubmit}>
-								<button class="btn btn-sm purple-btn" type="submit">Cancelar compra</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			);
+			var purchases = JSON.parse(localStorage.getItem("purchases"));
+			var purchasesCards = [];
+
+			for(let i=0; i<purchases.length; i++){
+				purchasesCards.push(printPurchase());
+			}
+
+			return purchasesCards;
 		}		
 	}
+}
+
+function printPurchase(){
+	return(
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title"></h5>
+			</div>
+		</div>
+	);
 }
 
 class NovaCompra extends React.Component{

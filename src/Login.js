@@ -42,7 +42,7 @@ class Login extends React.Component{
 				  </button>
 				  <div className="dropdown-menu purple-btn dropdown-menu-right">
 			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>
-			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Agendar Serviços</NavLink>
+			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel/agenda">Agendar Serviços</NavLink>
 				    <div className="dropdown-divider"></div>
 				    <form onSubmit={this.handleLogout}>
 			    		<button className="dropdown-item btn-sm purple-btn" type="submit">Sair</button>
