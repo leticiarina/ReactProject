@@ -33,7 +33,7 @@ class Compras extends React.Component{
 			var purchasesCards = [];
 
 			for(let i=0; i<purchases.length; i++){
-				purchasesCards.push(printPurchase());
+				purchasesCards.push(printPurchase(purchases[i]));
 			}
 
 			return purchasesCards;

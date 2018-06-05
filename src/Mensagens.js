@@ -1,35 +1,29 @@
 import React from 'react';
 
-class Mensagens extends React.Component{
+function Mensagens(){
 
-	constructor(props){
-		super(props);
-	}
+	if(localStorage.getItem("messages") === null){
+		return(
+			<div>
+				<h1>Mensagens</h1>
+				<p>Não há mensagens disponíveis.</p>
+			</div>
+		);
+	} else {
 
-	render(){
-		if(localStorage.getItem("messages") === null){
-			return(
-				<div>
-					<h1>Mensagens</h1>
-					<p>Não há mensagens disponíveis.</p>
-				</div>
-			);
-		} else {
+		var messages = JSON.parse(localStorage.getItem("messages"));
+		var allMessages = [];
 
-			var messages = JSON.parse(localStorage.getItem("messages"));
-			var allMessages = [];
-
-			for(let i=0; i<messages.length; i++){
-				allMessages.push(printMessage(JSON.stringify(messages[i])));
-			}
-
-			return(
-				<div>
-					<h1>Mensagens</h1>
-					{allMessages}
-				</div>
-			);
+		for(let i=0; i<messages.length; i++){
+			allMessages.push(printMessage(JSON.stringify(messages[i])));
 		}
+
+		return(
+			<div>
+				<h1>Mensagens</h1>
+				{allMessages}
+			</div>
+		);
 	}
 }
 
@@ -40,7 +34,7 @@ function printMessage(message){
 	return(
 		<div className="card">
 			<div className="card-body">
-				<h5 className="card-title">{message.id} {message.subject}</h5>
+				<h5 className="card-title">{message.subject}</h5>
 				<p>{message.name} ({message.email})</p>
 				<p>{message.body}</p>
 			</div>

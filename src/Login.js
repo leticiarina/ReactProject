@@ -70,7 +70,7 @@ class Login extends React.Component{
 				  </div>
 				</div>			
 			);
-		} else if(this.admin.logged){
+		} else if(this.state.loggedAdmin){
 			return(
 				<div className="dropdown purple-btn">
 				  <button className="btn btn-sm purple-btn dropdown-toggle" type="button" data-toggle="dropdown">

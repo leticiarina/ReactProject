@@ -32,12 +32,15 @@ class Agenda extends React.Component{
 				allServices.push(printService(JSON.stringify(services[i])));
 			}
 
-
 			return (
 				<div>
 					<h1>Agenda</h1>
 					{allServices}
-	    			<NavLink to="/painel/agenda/novo">Agendar serviço</NavLink>
+					<div>
+		    			<button className="btn btn-sm purple-btn sidebar-menu">
+		    				<NavLink to="/painel/agenda/novo">Agendar serviço</NavLink>
+		    			</button>
+	    			</div>
 	    		</div>
 			);
 		}		

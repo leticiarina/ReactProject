@@ -38,9 +38,6 @@ function Painel(){
 				<div className="col p-2 md-5 bg-light-green border border-white">
 				<Switch>
 			  		<Route exact path="/painel/mensagens" component={Mensagens}/>
-			  		<Route path="/painel/agenda/novo" component={NovoServico}/>
-			  		<Route exact path="/painel/compras" component={Compras}/>
-			  		<Route path="/painel/compras/novo" component={NovaCompra}/>
 				</Switch>
 				</div>
 			</div>
