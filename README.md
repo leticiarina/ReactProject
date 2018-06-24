@@ -17,11 +17,11 @@ Qualquer pessoa que não esteja logada pode enviar uma mensagem pela aba de `Con
 
 O usuário pode logar com duas contas diferentes pré-definidas, com os seguintes dados: 
 
-** Usuário comum: **
+**Usuário comum:**
 * Login: user@petshop.com
 * Senha: senha
 
-** Admin: **
+**Admin:**
 * Login: admin@petshop.com
 * Senha: admin
 
