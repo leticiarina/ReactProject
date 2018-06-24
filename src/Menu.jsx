@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './Login';
+import Login from './Login.jsx';
 import { NavLink } from 'react-router-dom';
 
 function Menu(){

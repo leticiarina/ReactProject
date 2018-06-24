@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Menu from './Menu';
-import Services from './Services';
-import Contato from './Contato';
-import Painel from './Painel';
-import Footer from './Footer';
+import Menu from './Menu.jsx';
+import Services from './Services.jsx';
+import Contato from './Contato.jsx';
+import Painel from './Painel.jsx';
+import Footer from './Footer.jsx';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './css/bootstrap.min.css';
 import './css/style.css';

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Agenda }  from './Agenda';
-import { NovoServico }  from './NovoServico';
-import { Mensagens } from './Mensagens';
+import { Agenda }  from './Agenda.jsx';
+import { NovoServico }  from './NovoServico.jsx';
+import { Mensagens } from './Mensagens.jsx';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 function Painel(){
