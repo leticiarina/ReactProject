@@ -61,7 +61,6 @@ class Login extends React.Component{
 					{this.user.name}
 				  </button>
 				  <div className="dropdown-menu purple-btn dropdown-menu-right">
-			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>
 			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel/agenda">Agendar Serviços</NavLink>
 				    <div className="dropdown-divider"></div>
 				    <form onSubmit={this.handleLogout}>
@@ -77,8 +76,7 @@ class Login extends React.Component{
 					{this.admin.name}
 				  </button>
 				  <div className="dropdown-menu purple-btn dropdown-menu-right">
-			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel">Painel</NavLink>
-			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel/agenda">Agendar Serviços</NavLink>
+			    	<NavLink className="dropdown-item btn-sm purple-btn" to="/painel/mensagens">Ver Mensagens</NavLink>
 				    <div className="dropdown-divider"></div>
 				    <form onSubmit={this.handleLogout}>
 			    		<button className="dropdown-item btn-sm purple-btn" type="submit">Sair</button>
